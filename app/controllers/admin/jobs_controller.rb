@@ -17,7 +17,6 @@ class Admin::JobsController < ApplicationController
 
     def create
       @job = Job.new(job_params)
-
       if @job.save
         redirect_to admin_jobs_path
       else
@@ -40,25 +39,20 @@ class Admin::JobsController < ApplicationController
 
     def destroy
       @job = Job.find(params[:id])
-
       @job.destroy
-
       redirect_to admin_jobs_path
     end
 
     def publish
       @job = Job.find(params[:id])
       @job.publish!
-
-      redirect_to :back
+      redirect_back(fallback_location: root_path)
     end
 
     def hide
       @job = Job.find(params[:id])
-
       @job.hide!
-
-      redirect_to :back
+      redirect_back(fallback_location: root_path)
     end
 
     private
