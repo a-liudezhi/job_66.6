@@ -1,14 +1,13 @@
 <div class="pull-right">
-  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default" ) %>
+  <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-danger" ) %>
 </div>
 
- <table class="table table-boldered table-striped custab" >
+<table class="table table-boldered table-striped custab" >
     <thead>
-        <tr>
+      <tr class="btn-danger">
             <td>
                 职缺
             </td>
-
             <td>
               收到履历数量
             </td>
@@ -29,10 +28,8 @@
 
     <% @jobs.each do |job| %>
     <tr>
-
         <td>
             <%= render_job_status(job) %>
-
             <%= link_to(job.title, admin_job_path(job)) %>
         </td>
         <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>

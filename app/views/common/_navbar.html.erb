@@ -2,8 +2,12 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-           <a class="navbar-brand" href="/"><i class="fa fa-diamond" aria-hidden="true">真·24K Offer</i></a>
-        </div>
+        <tr>
+          <td> <a class="navbar-brand" href="/"><i class="fa fa-diamond" aria-hidden="true">真·24K Offer</i> </a></td>
+          <td> <%= link_to("工作列表", jobs_path, :class => "navbar-brand" ) %></td>
+          <td> <%= link_to("关于", root_path, :class => "navbar-brand") %></td>
+        </tr>
+      </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -25,12 +29,12 @@
                     </ul>
                   </li>
                 <% end %>
-            </ul>
+             </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container-fluid -->
-</nav>
+  </nav>
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog" role="document">

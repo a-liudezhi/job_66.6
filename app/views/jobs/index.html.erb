@@ -1,13 +1,12 @@
-<table class="table table-boldered table-striped custab" >
-    <thead>
-        <tr>
-            <td>
-                职缺</td>
+
+<table class=" table table-boldered table-striped custab " >
+  <thead>
+        <tr class="btn-danger">
+            <td>职缺</td>
             <td>薪资下限</td>
             <td>薪资上限</td>
             <td>刊登时间</td>
         </tr>
-
     </thead>
     <tbody>
         <% @jobs.each do |job| %>
@@ -27,6 +26,7 @@
         </tr>
         <% end %>
     </tbody>
+
     <div class="dropdown clearfix pull-right">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           排序
@@ -38,12 +38,10 @@
             </li>
             <li>
                 <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
-
             </li>
             <li>
               <%= link_to("按照发表时间排序", jobs_path ) %>
-
             </li>
         </ul>
     </div>
-</table>
+  </table>
