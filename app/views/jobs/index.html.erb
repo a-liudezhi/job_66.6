@@ -2,12 +2,14 @@
 <table class=" table table-boldered table-striped custab " >
   <thead>
         <tr class="btn-danger">
-            <td>职缺</td>
-            <td>薪资下限</td>
-            <td>薪资上限</td>
+            <td>职称</td>
+            <td>公司</td>
+            <td>薪资情况</td>
+            <td>工作地点</td>
             <td>刊登时间</td>
         </tr>
     </thead>
+
     <tbody>
         <% @jobs.each do |job| %>
         <tr>
@@ -15,10 +17,14 @@
                 <%= link_to(job.title, job_path(job)) %>
             </td>
             <td>
-                <%= job.wage_lower_bound %>
+            </td>
+            <td class="  ">
+                <%= job.wage_lower_bound %>k
+                ~
+                <%= job.wage_upper_bound %>k
             </td>
             <td>
-                <%= job.wage_upper_bound %>
+                <%= job.location %>
             </td>
             <td>
                 <%= job.created_at %>
@@ -45,3 +51,7 @@
         </ul>
     </div>
   </table>
+
+  <div class="text-center">
+    <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+  </div>
