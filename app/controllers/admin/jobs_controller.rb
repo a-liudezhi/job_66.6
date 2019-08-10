@@ -1,6 +1,7 @@
 class Admin::JobsController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
     before_action :require_is_admin
+    before_action :validate_search_key, only: [:search]
     layout "admin"
 
     def show
@@ -53,6 +54,25 @@ class Admin::JobsController < ApplicationController
       @job = Job.find(params[:id])
       @job.hide!
       redirect_back(fallback_location: root_path)
+    end
+
+    def search
+       if @query_string.present?
+         search_result = Job.all.ransack(@search_criteria).result(:distinct => true)
+         @jobs = search_result.paginate(:page => params[:page], :per_page => 5 )
+       end
+     end
+
+    protected
+
+    def validate_search_key  #去除特殊字符#
+      @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+      @search_criteria = search_criteria(@query_string)
+    end
+
+
+    def search_criteria(query_string) #筛选多个栏位#
+      { :title_or_description_or_brand_or_location_cont => query_string }
     end
 
     private

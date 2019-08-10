@@ -1,9 +1,9 @@
-
-<table class=" table table-boldered table-striped custab " >
-  <thead>
+<div class="col-md-12">
+  <table class="table table-boldered table-striped custab " >
+    <thead>
         <tr class="btn-danger">
-            <td>职称</td>
-            <td>公司</td>
+            <td>职位名称</td>
+            <td>品牌名称</td>
             <td>薪资情况</td>
             <td>工作地点</td>
             <td>刊登时间</td>
@@ -17,6 +17,7 @@
                 <%= link_to(job.title, job_path(job)) %>
             </td>
             <td>
+              <%= job.brand %>
             </td>
             <td class="  ">
                 <%= job.wage_lower_bound %>k
@@ -24,7 +25,7 @@
                 <%= job.wage_upper_bound %>k
             </td>
             <td>
-                <%= job.location %>
+                  <span class="fa fa-map-marker"></span><%= job.location %>
             </td>
             <td>
                 <%= job.created_at %>
@@ -52,6 +53,7 @@
     </div>
   </table>
 
-  <div class="text-center">
+ <div class="text-center">
     <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
   </div>
+</div>

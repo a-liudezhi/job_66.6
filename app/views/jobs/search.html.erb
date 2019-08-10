@@ -1,0 +1,69 @@
+<div class="col-md-12">
+  <!--=== 搜索结果，没有符合条件的数据 ===-->
+ <% if @jobs.blank?%>
+  <div class="col-md-offset-1">
+  <div class="search-error">
+    <h2>没有符合搜索条件的资料哦！</h2><br />
+    <p><%= link_to("立即查看工作", jobs_path, class: "btn btn-lg btn-success") %></p>
+  </div>
+</div>
+<% else %>
+<!--=== 搜索结果，有符合条件的数据 ===-->
+<div class="col-md-offset-1 page-title">
+  <h1><sapn class="fa fa-search"></sapn> 搜索结果</h1>
+</div>
+
+<table class="table table-boldered table-striped custab" >
+    <thead>
+      <tr class="btn-danger ">
+            <td>
+               职位名称
+            </td>
+            <td>
+              品牌名称
+            </td>
+            <td>
+              收到履历
+            </td>
+            <td>
+              薪资情况
+            </td>
+            <td>
+              工作地点
+            </td>
+            <td>
+                刊登时间
+            </td>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% @jobs.each do |job| %>
+    <tr>
+        <td>
+            <%= link_to(job.title, job_path(job)) %>
+        </td>
+        <td><span><%= job.brand %></span></td>
+        <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
+        <td class="  ">
+            <%= job.wage_lower_bound %>k
+            ~
+            <%= job.wage_upper_bound %>k
+        </td>
+        <td>
+            <span class="fa fa-map-marker"></span><%= job.location %>
+        </td>
+        <td>
+          <span><%= job.created_at.strftime("%Y-%m-%d") %></span>
+        </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!--=== 换页区块 ===-->
+  <div class="text-center">
+    <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+  </div>
+<% end %>
+</div>

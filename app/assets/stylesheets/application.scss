@@ -16,13 +16,15 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+
+
 //===给导航栏改变底色和文字色彩
  //---------Navbar---------
  //---给导航栏替换不同的颜色---
 
 .navbar-default {
-   background-color: #121212;  //背景颜色
-   border-color: #121212; //边框色
+   background-color: transparent;  //背景颜色
+   border-color: #ECEFF1; //边框色
    margin-bottom: 0; //底部 margin 不撑开距离
   }
 //---去掉导航栏的圆角---
@@ -86,8 +88,8 @@
      background-repeat: no-repeat; //背景是否重复
      background-size: cover; //这段代码主要实现了图片不会被拉伸变形的效果
      margin-bottom: 50px; //和底下距离
-     //margin: 0px -70px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
      }
+
 //---阴影部分---
      .box-inner {
          background-color: rgba(250, 250, 250, 0.39); //背景颜色含透明度
@@ -302,4 +304,28 @@
 
  .login-help{
    font-size: 12px;
+}
+
+//search
+.search-info-title {
+  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
+  color: #0d6ded;
+  font-size: 20px;
+  text-align: center;
+}
+
+.search-id {
+  width: 220px;
+  height: 50px;
+  padding-top: 8px;
+  margin-left: 40px;
+}
+
+.input-group-btn {
+   padding-bottom: 8px;
+}
+
+ .form-control {
+   height: 33px;
  }
+//search end---
