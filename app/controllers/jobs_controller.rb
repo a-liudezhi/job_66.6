@@ -9,6 +9,7 @@ class JobsController < ApplicationController
         Job.published.order('wage_upper_bound DESC')
       else
         Job.published.recent.paginate(:page => params[:page], :per_page =>8 )
+        # set_page_title "应聘 | 工作"  #设定title
       end
   end
 
@@ -17,6 +18,9 @@ class JobsController < ApplicationController
     if @job.is_hidden
       flash[:warning] = "This Job already archived"
       redirect_to root_path
+      set_page_title @job.title  #设定title
+      set_page_description @job.description #设定description
+      set_page_keywords @job.tags #设定关键字
     end
   end
 
