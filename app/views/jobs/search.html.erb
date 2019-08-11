@@ -4,7 +4,7 @@
   <div class="col-md-offset-1">
   <div class="search-error">
     <h2>没有符合搜索条件的资料哦！</h2><br />
-    <p><%= link_to("立即查看工作", jobs_path, class: "btn btn-lg btn-success") %></p>
+    <p><%= link_to("查看工作", jobs_path, class: "btn btn-lg btn-success") %></p>
   </div>
 </div>
 <% else %>
@@ -44,14 +44,15 @@
             <%= link_to(job.title, job_path(job)) %>
         </td>
         <td><span><%= job.brand %></span></td>
-        <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
+        <td><%= job.resumes.count %></td>
         <td class="  ">
             <%= job.wage_lower_bound %>k
             ~
             <%= job.wage_upper_bound %>k
         </td>
         <td>
-            <span class="fa fa-map-marker"></span><%= job.location %>
+            <span class="fa fa-map-marker"></span>
+            <%= job.location %>
         </td>
         <td>
           <span><%= job.created_at.strftime("%Y-%m-%d") %></span>
@@ -65,5 +66,5 @@
   <div class="text-center">
     <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
   </div>
-<% end %>
+ <% end %>
 </div>

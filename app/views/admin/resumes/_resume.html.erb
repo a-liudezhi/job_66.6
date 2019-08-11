@@ -1,27 +1,54 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="panel-title">
-                    <%= resume.user.email %>
-                </h3>
-            </div>
+<table class="table table-boldered table-striped custab" >
+    <thead>
+      <tr class="btn-danger ">
+            <td>
+              投交者
+            </td>
+            <td>
+              内容
+            </td>
+            <td>
+              附件
+            </td>
+            <td>
+              投交时间
+            </td>
+            <td>
+              管理选项
+            </td>
+          </tr>
+      </thead>
 
-        </div>
-    </div>
-    <div class="panel-body">
-        <div class="trix-content">
-            <p> <%= simple_format(resume.content) %> </p>
-        </div>
-
-        <hr>
-
+  <tbody>
+     <% @resumes.each do |resume| %>
+          <tr>
+              <td>
+            <%= resume.user.email %>
+              </td>
+              <td>
+        <%= resume.content %>
+              </td>
+              <td>
         <% if resume.attachment.present? %>
           <i class="fa fa-paperclip"> </i>
-          <%= link_to("Download Resume", resume.attachment_url) %>
+          <%= link_to("下载履历", resume.attachment_url) %>
         <% else %>
-           No Attachment
+           没有
         <% end %>
-    </div>
+        </td>
+        <td>
+        <%= resume.created_at %>
+        </td>
+        <td>
+         <%= link_to("认可", resume.attachment_url, :class => "btn btn-xs btn-info") %>
+         <%= link_to("待定", resume.attachment_url, :class => "btn btn-xs btn-info") %>
 
+    </td>
+   </tr>
+   <% end %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%= will_paginate @resumes, renderer: BootstrapPagination::Rails %>
 </div>
