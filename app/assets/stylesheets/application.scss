@@ -17,6 +17,46 @@
  @import "bootstrap";
  @import "font-awesome";
 
+// 实现navbar动态效果（会使用到Javascript)设定navbar预设属性，及变动后的属性
+ .navbar-default {
+   background: rgba(0,0,0,0.3); //指的是将navbar背景预设为rgb(0,0,0)（黑色）的背景颜色，0.3则为透明度（可设定的值为0~1，0为完全透明、1为不透明）
+
+   &.show_bgcolor {
+     background-color: #02061A; //设定的是待会Javascript调用时的设定，此范例将背景设定为深蓝色
+   }
+ }
+// navbar动态效果 end--
+
+// 设定首页滚动按钮属性
+
+ .goTop {
+     height: 35px;
+     width: 35px;
+     top: 80%;
+     right: 35px;
+     position: fixed;
+     background-color: #fff;
+     border-radius: 5px;
+     box-shadow: 1px 1px 3px #666;
+
+     span {
+       color: #000;
+       font-size: 20px;
+             position: absolute;
+       top: 7px;
+       left: 8px;
+     }
+   }
+
+   .goTop:hover {
+     background-color: #f0f0f0;
+
+     span{
+       color: #eb5424;
+     }
+   }
+   // 设定首页滚动按钮属性 end--
+
  /*===== user 注册登陆 ====*/
  .user_setup{
      height: 750px;
