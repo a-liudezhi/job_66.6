@@ -45,6 +45,7 @@ gem 'annotate'  # 自动注解功能
 gem 'will_paginate-bootstrap'
 gem 'ransack' # 搜索
 gem 'seo_helper' # 网站搜索引擎优化
+gem 'rails-i18n'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

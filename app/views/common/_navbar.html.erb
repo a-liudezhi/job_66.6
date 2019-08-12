@@ -1,7 +1,7 @@
-<div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
-<div class="col-md-12">
- <nav class="navbar navbar-default navbar-static-top">
-  <div class="container-fluid">
+<!-- <div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation"> <!--滚动导航--> -->
+ <div class="col-md-12">
+  <nav class="navbar navbar-default navbar-static-top">
+   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
         <!--=== 右侧下拉选单（移动端） ===-->
@@ -35,6 +35,10 @@
                   </a>
                   <ul class="dropdown-menu">
                     <% if current_user.admin? %>
+                    <!-- 語系選項 -->
+<li><%= link_to "簡体中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %></li>
+<li><%= link_to "繁体中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %></li>
+<li><%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %></li>
                       <li> <%= link_to("企业专区", admin_jobs_path) %> </li>
                       <!-- <li class="divider"> </li> -->
                     <% end %>
@@ -58,9 +62,9 @@
             <% end %>
           </div>
         </div>
-     <!-- /.navbar-collapse -->
-   </div>
-  <!-- /.container-fluid -->
- </nav>
-</div>
-</div>
+      <!-- /.navbar-collapse -->
+      </div>
+    <!-- /.container-fluid -->
+   </nav>
+  </div>
+<!-- </div> -->
