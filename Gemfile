@@ -39,9 +39,9 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'jquery-rails'
 gem 'simple_form'
-gem 'font-awesome-rails'
-gem 'carrierwave'
-gem 'annotate'
+gem 'font-awesome-rails' # Web字体和样式表
+gem 'carrierwave' # 用于上传文件或者图片
+gem 'annotate'  # 自动注解功能
 gem 'will_paginate-bootstrap'
 gem 'ransack' # 搜索
 gem 'seo_helper' # 网站搜索引擎优化

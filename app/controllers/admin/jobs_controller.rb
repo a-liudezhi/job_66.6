@@ -6,14 +6,11 @@ class Admin::JobsController < ApplicationController
 
     def show
       @job = Job.find(params[:id])
-      set_page_title @job.title  #设定title
-      set_page_description @job.description #设定description
-      set_page_keywords @job.tags #设定关键字
+
     end
 
     def index
       @jobs = Job.all.recent.paginate(:page => params[:page], :per_page =>8 )
-      # set_page_title "应聘 | 工作"  #设定title
     end
 
     def new
