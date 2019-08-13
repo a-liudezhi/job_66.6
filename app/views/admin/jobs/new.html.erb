@@ -9,6 +9,7 @@
 <%= f.input :wage_upper_bound, :label => "薪资上限" %>
 <%= f.input :location, :label => "工作地点" %>
 <%= f.input :contact_email, :label => "联系邮箱" %>
-<%= f.input :is_hidden %>
+<%= f.input :is_hidden, :label => false, as: :radio_buttons, collection:  [['公布', true], ['隐藏', false]] %>
+<div class="form-actions text-center">
   <%= f.submit "提交" %>
 <% end %>
