@@ -1,4 +1,4 @@
-<h2>Change your password</h2>
+<h2>更改您的密码</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -8,16 +8,16 @@
 
   <div class="form-inputs">
     <%= f.input :password,
-                label: "New password",
+                label: "新密码",
                 required: true,
                 autofocus: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation, label: "Confirm your new password", required: true %>
+                input_html: { autocomplete: "新密码" } %>
+    <%= f.input :password_confirmation, label: "确认您的新密码", required: true %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Change my password" %>
+    <%= f.button :submit, "提交更改" %>
   </div>
 <% end %>
 

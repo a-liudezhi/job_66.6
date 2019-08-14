@@ -1,5 +1,5 @@
 <!-- <div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation"> <!--滚动导航-->
- <div class="col-md-12">
+<div class="col-md-12">
   <nav class="navbar navbar-default navbar-static-top">
    <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -24,7 +24,7 @@
             </ul>
           <!--=== 帐号操作 ===-->
           <ul class="nav navbar-nav navbar-right">
-            <!-- <li class="divider" role="separator"></li> -->
+            <li class="divider" role="separator"></li>
               <% if !current_user %>
                 <li><%= button_to("登录", new_user_session_path, method: :get, class: "btn btn-default navbar-btn") %></li>
                 <li><%= button_to("注册", new_user_registration_path, method: :get, class: "btn btn-default navbar-btn") %> </li>
@@ -35,15 +35,18 @@
                       <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
-                    <% if current_user.admin? %>
                     <!-- 語系選項 -->
-<li><%= link_to "簡体中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %></li>
-<li><%= link_to "繁体中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %></li>
-<li><%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %></li>
-                      <li> <%= link_to("企业专区", admin_jobs_path) %> </li>
-                      <!-- <li class="divider"> </li> -->
-                    <% end %>
-                      <!-- <li class="divider" role="separator"></li> -->
+<li><%= link_to "簡体中文版", class: "btn btn-md btn-default", :controller => controller_name, :action => action_name, :locale => "zh-CN" %></li>
+<li><%= link_to "繁体中文版", class: "btn btn-md btn-default", :controller => controller_name, :action => action_name, :locale => "zh-TW" %></li>
+<li><%= link_to "English", class: "btn btn-md btn-default" , :controller => controller_name, :action => action_name, :locale => "en" %></li>
+                      <% if current_user.admin? %>
+                      <li> <%= link_to("企业专区", admin_jobs_path, class: "btn btn-md btn-default") %> </li>
+                      <li class="divider"> </li>
+                      <% end %>
+                      <li class="divider" role="separator"></li>
+                      <li>
+                      <%= link_to("修改密码", edit_user_registration_path, class: "btn btn-md btn-default") %>
+                      </li>
                       <li> <%= link_to("退出", destroy_user_session_path, method: :delete) %> </li>
                   </ul>
                 </li>
