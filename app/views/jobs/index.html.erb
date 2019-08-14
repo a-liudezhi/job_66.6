@@ -42,11 +42,15 @@
              </td>
              <td>
             <% if current_user && current_user == job.user %>
-             <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
-             <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
-                         method: :delete, data: { confirm: "Are you sure?" } )%>
-            <% end %>
-          </td>
+                  <%= link_to("编辑", edit_job_path(job), :class => "btn btn-xs btn-info") %>
+                  <%= link_to("删除", job_path(job), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) %>
+                <% if job.is_hidden %>
+                  <%= link_to("公布", publish_job_path(job) , :method => :post, :class => "btn btn-xs btn-success") %>
+                <% else %>
+                  <%= link_to("隐藏", hide_job_path(job), :method => :post,  :class => "btn btn-xs btn-warning") %>
+                <% end %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
     </tbody>

@@ -21,6 +21,10 @@ Rails.application.routes.draw do
     get :helper
     get :about
    end
+   member do
+     post :publish
+     post :hide
+   end
     resources :resumes
   end
 

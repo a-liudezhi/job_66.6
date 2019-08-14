@@ -55,6 +55,18 @@ def destroy
   redirect_to jobs_path
 end
 
+def publish
+  @job = Job.find(params[:id])
+  @job.publish!
+  redirect_back(fallback_location: root_path)
+end
+
+def hide
+  @job = Job.find(params[:id])
+  @job.hide!
+  redirect_back(fallback_location: root_path)
+end
+
 def search
   if @query_string.present?
     search_result = Job.published.ransack(@search_criteria).result(:distinct => true)
