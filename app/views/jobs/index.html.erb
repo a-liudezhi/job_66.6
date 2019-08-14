@@ -1,4 +1,8 @@
 <div class="col-md-12">
+  <div class="pull-right">
+   <%= link_to("新增职位", new_job_path, :class => "btn btn-danger" ) %>
+</div>
+
   <table class="table table-boldered table-striped custab " >
     <thead>
         <tr class="btn-danger">
@@ -8,6 +12,7 @@
             <td>工作地点</td>
             <td>刊登时间</td>
             <td>发布者</td>
+            <td>管理选项</td>
         </tr>
     </thead>
 
@@ -35,6 +40,13 @@
              <td>
                <%= job.user.email %>
              </td>
+             <td>
+            <% if current_user && current_user == job.user %>
+             <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
+             <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
+                         method: :delete, data: { confirm: "Are you sure?" } )%>
+            <% end %>
+          </td>
           </tr>
         <% end %>
     </tbody>
