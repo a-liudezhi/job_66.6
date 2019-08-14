@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_11_125106) do
+ActiveRecord::Schema.define(version: 2019_08_14_064710) do
 
   create_table "jobs", force: :cascade do |t|
     t.string "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_08_11_125106) do
     t.boolean "is_hidden", default: true
     t.string "brand"
     t.string "location"
+    t.integer "user_id"
   end
 
   create_table "resumes", force: :cascade do |t|

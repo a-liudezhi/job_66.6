@@ -7,6 +7,7 @@
             <td>薪资情况</td>
             <td>工作地点</td>
             <td>刊登时间</td>
+            <td>发布者</td>
         </tr>
     </thead>
 
@@ -30,8 +31,11 @@
             </td>
             <td>
                 <%= job.created_at %>
-            </td>
-        </tr>
+             </td>
+             <td>
+               <%= job.user.email %>
+             </td>
+          </tr>
         <% end %>
     </tbody>
 
