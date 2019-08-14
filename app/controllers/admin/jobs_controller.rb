@@ -64,6 +64,9 @@ class Admin::JobsController < ApplicationController
        end
      end
 
+     def helper
+     end
+
     protected
 
     def validate_search_key  #去除特殊字符#

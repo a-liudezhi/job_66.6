@@ -18,8 +18,9 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li><%= link_to('管理后台', admin_jobs_path) %></li>
-              <li><%= link_to('职位列表', jobs_path) %></li>
-              <li><%= link_to('关于', admin_jobs_path) %></li>
+              <li><%= link_to('回到前台', jobs_path) %></li>
+              <li><%= link_to('使用帮助', helper_admin_jobs_path) %></li>
+              <li>注册数量<%= User.count %>个</li>
             </ul>
           <!--=== 帐号操作 ===-->
           <ul class="nav navbar-nav navbar-right">

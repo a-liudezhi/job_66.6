@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :jobs do
       collection do
        get :search
+       get :helper
       end
       member do
         post :publish
@@ -17,9 +18,12 @@ Rails.application.routes.draw do
   resources :jobs do
    collection do
     get :search
+    get :helper
+    get :about
    end
     resources :resumes
   end
 
   root 'welcome#index'
+
 end
