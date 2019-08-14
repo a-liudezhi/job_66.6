@@ -49,7 +49,6 @@ end
 
 def destroy
   @job = Job.find(params[:id])
-
   @job.destroy
 
   redirect_to jobs_path
@@ -67,6 +66,22 @@ def hide
   redirect_back(fallback_location: root_path)
 end
 
+def join
+  @job = Job.find(params[:id])
+     if !current_user.is_member_of?(@job)
+    current_user.join_col(@job)
+     end
+    redirect_to job_path(@job)
+ end
+
+def quit
+    @job = Job.find(params[:id])
+      if current_user.is_member_of?(@job)
+    current_user.quit_col(@job)
+     end
+    redirect_to job_path(@job)
+end
+
 def search
   if @query_string.present?
     search_result = Job.published.ransack(@search_criteria).result(:distinct => true)
@@ -74,46 +89,20 @@ def search
   end
 end
 
-protected
-
-def validate_search_key  #去除特殊字符#
-  @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
-  @search_criteria = search_criteria(@query_string)
-end
-
-def search_criteria(query_string) #筛选多个栏位#
-  { :title_or_description_or_brand_or_location_cont => query_string }
-end
-
-  def join
-   @job = job.find(params[:id])
-
-    if !current_user.is_member_of?(@job)
-      current_user.join!(@job)
-      flash[:notice] = "加入收藏成功！"
-    else
-      flash[:warning] = "你已收藏过了！"
-    end
-
-    redirect_to job_path(@job)
-  end
-
-  def quit
-    @job = job.find(params[:id])
-
-    if current_user.is_member_of?(@job)
-      current_user.quit!(@job)
-      flash[:alert] = "已取消收藏！"
-    else
-      flash[:warning] = "你还没收藏，怎么取消 XD"
-    end
-
-    redirect_to job_path(@job)
-  end
-
 private
 
  def job_params
    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :brand, :location)
+ end
+
+protected
+
+ def validate_search_key  #去除特殊字符#
+  @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+  @search_criteria = search_criteria(@query_string)
+ end
+
+ def search_criteria(query_string) #筛选多个栏位#
+  { :title_or_description_or_brand_or_location_cont => query_string }
  end
 end

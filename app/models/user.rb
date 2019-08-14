@@ -31,11 +31,11 @@ class User < ApplicationRecord
     participated_jobs.include?(job)
   end
 
- def join!(job)
+ def join_col(job)
     participated_jobs << job
   end
 
- def quit!(job)
+ def quit_col(job)
     participated_jobs.delete(job)
   end
 
