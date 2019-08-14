@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :join, :quit]
   before_action :validate_search_key, only: [:search]
    def index
     @jobs = case params[:order]
@@ -84,6 +84,32 @@ end
 def search_criteria(query_string) #筛选多个栏位#
   { :title_or_description_or_brand_or_location_cont => query_string }
 end
+
+  def join
+   @job = job.find(params[:id])
+
+    if !current_user.is_member_of?(@job)
+      current_user.join!(@job)
+      flash[:notice] = "加入收藏成功！"
+    else
+      flash[:warning] = "你已收藏过了！"
+    end
+
+    redirect_to job_path(@job)
+  end
+
+  def quit
+    @job = job.find(params[:id])
+
+    if current_user.is_member_of?(@job)
+      current_user.quit!(@job)
+      flash[:alert] = "已取消收藏！"
+    else
+      flash[:warning] = "你还没收藏，怎么取消 XD"
+    end
+
+    redirect_to job_path(@job)
+  end
 
 private
 

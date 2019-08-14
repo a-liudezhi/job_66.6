@@ -2,8 +2,10 @@
 <span class="pull-right">
   <% if current_user && current_user.is_member_of?(@job) %>
     <label class="label label-success"> 已收藏 </label>
+ <%= link_to("取消收藏", quit_job_path(@job), method: :post, class: "btn btn-default") %>
   <% else %>
     <label class="label label-warning"> 还没收藏 </label>
+<%= link_to("加入收藏", join_job_path(@job), method: :post, class: "btn btn-default") %>
   <% end %>
 </span>
 

@@ -24,6 +24,8 @@ Rails.application.routes.draw do
    member do
      post :publish
      post :hide
+     post :join
+     post :quit
    end
     resources :resumes
   end
