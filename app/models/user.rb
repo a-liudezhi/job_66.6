@@ -29,5 +29,14 @@ class User < ApplicationRecord
 
   def is_member_of?(job)
     participated_jobs.include?(job)
- end
+  end
+
+ def join!(job)
+    participated_jobs << job
+  end
+
+ def quit!(job)
+    participated_jobs.delete(job)
+  end
+
 end
