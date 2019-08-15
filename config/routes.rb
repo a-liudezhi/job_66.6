@@ -15,6 +15,18 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :account do
+    resources :jobs do
+    member do
+      post :publish
+      post :hide
+      post :join
+      post :quit
+    end
+      resources :resumes
+   end
+  end
+
   resources :jobs do
    collection do
     get :search
@@ -27,9 +39,9 @@ Rails.application.routes.draw do
      post :join
      post :quit
    end
+
     resources :resumes
   end
 
   root 'welcome#index'
-
 end

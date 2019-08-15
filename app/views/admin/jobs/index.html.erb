@@ -25,7 +25,7 @@
                 管理选项
             </td>
             <td>
-                刊登时间
+                最后更新
             </td>
         </tr>
     </thead>
@@ -58,14 +58,12 @@
             <% end %>
         </td>
         <td>
-            <%= job.created_at %>
+          <%= job.updated_at %>
         </td>
     </tr>
     <% end %>
   </tbody>
 </table>
 
-<div class="text-center">
-  <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
- </div>
+
 </div>

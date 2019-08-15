@@ -4,13 +4,13 @@ class Admin::JobsController < ApplicationController
     before_action :validate_search_key, only: [:search]
     layout "admin"
 
+    def index
+      @jobs = Job.all.recent.paginate(:page => params[:page], :per_page =>8 )
+    end
+
     def show
       @job = Job.find(params[:id])
 
-    end
-
-    def index
-      @jobs = Job.all.recent.paginate(:page => params[:page], :per_page =>8 )
     end
 
     def new

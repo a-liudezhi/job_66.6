@@ -1,7 +1,5 @@
 <div class="col-md-12">
-  <div class="pull-right">
-   <%= link_to("新增职位", new_job_path, :class => "btn btn-danger" ) %>
-</div>
+ <h2 class="text-center"> 我收藏的职位 </h2>
 
   <table class="table table-boldered table-striped custab " >
     <thead>
@@ -20,7 +18,7 @@
         <% @jobs.each do |job| %>
         <tr>
             <td>
-                <%= link_to(job.title, job_path(job)) %>
+                <%= link_to(job.title, account_jobs_path(job)) %>
             </td>
             <td>
               <%= job.brand %>
@@ -31,25 +29,17 @@
                 <%= job.wage_upper_bound %>k
             </td>
             <td>
-                <span class="fa fa-map-marker"></span>
-                <%= job.location %>
+                  <span class="fa fa-map-marker"></span>
+                  <%= job.location %>
             </td>
             <td>
-               <%= job.updated_at %>
+                <%= job.updated_at %>
              </td>
              <td>
                <%= job.user.email %>
              </td>
              <td>
-            <% if current_user && current_user == job.user %>
-                  <%= link_to("编辑", edit_job_path(job), :class => "btn btn-xs btn-info") %>
-                  <%= link_to("删除", job_path(job), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) %>
-                <% if job.is_hidden %>
-                  <%= link_to("公布", publish_job_path(job) , :method => :post, :class => "btn btn-xs btn-success") %>
-                <% else %>
-                  <%= link_to("隐藏", hide_job_path(job), :method => :post,  :class => "btn btn-xs btn-warning") %>
-                <% end %>
-              <% end %>
+               <%= Job.count %>
             </td>
           </tr>
         <% end %>
@@ -62,17 +52,16 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
             <li>
-              <%= link_to("按照薪资最低排序", jobs_path(:order => "by_lower_bound")) %>
+              <%= link_to("按照薪资最低排序", account_jobs_path(:order => "by_lower_bound")) %>
             </li>
             <li>
-                <%= link_to("按照薪资最高排序", jobs_path(:order => "by_upper_bound")) %>
+                <%= link_to("按照薪资最高排序", account_jobs_path(:order => "by_upper_bound")) %>
             </li>
             <li>
-              <%= link_to("按照最后更新排序", jobs_path ) %>
+              <%= link_to("按照最后更新排序", account_jobs_path ) %>
             </li>
         </ul>
     </div>
   </table>
-
 
 </div>
