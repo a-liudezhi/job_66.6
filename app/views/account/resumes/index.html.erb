@@ -43,8 +43,8 @@
          <%= resume.created_at %>
          </td>
          <td>
-          <%= link_to("认可", resume.attachment_url, :class => "btn btn-xs btn-info") %>
-          <%= link_to("待定", resume.attachment_url, :class => "btn btn-xs btn-info") %>
+           <%= link_to("编辑",  :class => "btn btn-xs btn-info") %>
+           <%= link_to("删除",  :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) %>
 
      </td>
     </tr>

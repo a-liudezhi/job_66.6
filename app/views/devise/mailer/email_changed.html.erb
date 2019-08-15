@@ -1,7 +1,7 @@
-<p>Hello <%= @email %>!</p>
+<p>你好 <%= @email %>!</p>
 
 <% if @resource.try(:unconfirmed_email?) %>
-  <p>We're contacting you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
+  <p>很抱歉通知您，您的电子邮件未经验证！ <%= @resource.unconfirmed_email %>.</p>
 <% else %>
-  <p>We're contacting you to notify you that your email has been changed to <%= @resource.email %>.</p>
+  <p>您的电子邮件已验证成功！ <%= @resource.email %>.</p>
 <% end %>

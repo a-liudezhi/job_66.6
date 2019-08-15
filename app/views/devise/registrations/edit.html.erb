@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>修改 <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -8,6 +8,7 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
+    <%= f.input :name, :label => "个性签名" %>
     <%= f.input :password, :label => "新密码", placeholder: '请输入6-16位新密码', required: true, input_html: { maxlength: 16 } %>
     <%= f.input :password_confirmation, :label => false, placeholder: '确认新密码', error: '请输入相同的新密码', required: true, input_html: { maxlength: 16 } %>
     <%= f.input :current_password, :label => "当前(旧)密码", placeholder: '请输入6-16位旧密码', error: '请输入6-16位旧密码', required: true, input_html: { maxlength: 16 } %>
