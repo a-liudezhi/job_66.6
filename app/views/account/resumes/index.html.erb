@@ -1,0 +1,55 @@
+<div class="col-md-12">
+ <h2 class="text-center"> 我投送过的履历 </h2>
+
+ <table class="table table-boldered table-striped custab" >
+     <thead>
+       <tr class="btn-danger ">
+             <td>
+               投送者
+             </td>
+             <td>
+               内容
+             </td>
+             <td>
+               附件
+             </td>
+             <td>
+               投交时间
+             </td>
+             <td>
+               管理选项
+             </td>
+           </tr>
+       </thead>
+
+   <tbody>
+      <% @resumes.each do |resume| %>
+           <tr>
+               <td>
+                 <%= resume.user.email %>
+               </td>
+               <td>
+         <%= resume.content %>
+               </td>
+               <td>
+         <% if resume.attachment.present? %>
+           <i class="fa fa-paperclip"> </i>
+           <%= link_to("下载履历", resume.attachment_url) %>
+         <% else %>
+            没有
+         <% end %>
+         </td>
+         <td>
+         <%= resume.created_at %>
+         </td>
+         <td>
+          <%= link_to("认可", resume.attachment_url, :class => "btn btn-xs btn-info") %>
+          <%= link_to("待定", resume.attachment_url, :class => "btn btn-xs btn-info") %>
+
+     </td>
+    </tr>
+    <% end %>
+   </tbody>
+ </table>
+
+</div>

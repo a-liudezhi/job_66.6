@@ -42,7 +42,8 @@
                       <% if current_user.admin? %>
                       <li> <%= link_to("企业专区", admin_jobs_path, class: "btn btn-md btn-default") %> </li>
                       <% end %>
-                      <li> <%= link_to("我的收藏", account_jobs_path, class: "btn btn-md btn-default") %> </li>
+                      <li> <%= link_to("收藏的职位", account_jobs_path, class: "btn btn-md btn-default") %> </li>
+                      <li> <%= link_to("投送的履历", account_resumes_path, class: "btn btn-md btn-default") %> </li>
                       <li> <%= link_to("修改密码", edit_user_registration_path, class: "btn btn-md btn-default") %> </li>
                       <li> <%= link_to("退出", destroy_user_session_path, method: :delete, class: "btn btn-md btn-default") %> </li>
                   </ul>

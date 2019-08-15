@@ -16,15 +16,8 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-    resources :jobs do
-    member do
-      post :publish
-      post :hide
-      post :join
-      post :quit
-    end
-      resources :resumes
-   end
+    resources :jobs
+    resources :resumes
   end
 
   resources :jobs do
@@ -39,7 +32,6 @@ Rails.application.routes.draw do
      post :join
      post :quit
    end
-
     resources :resumes
   end
 
