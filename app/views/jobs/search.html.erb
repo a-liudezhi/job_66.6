@@ -32,7 +32,7 @@
               工作地点
             </td>
             <td>
-                刊登时间
+              最后更新
             </td>
         </tr>
     </thead>
@@ -55,7 +55,7 @@
             <%= job.location %>
         </td>
         <td>
-          <span><%= job.created_at.strftime("%Y-%m-%d") %></span>
+          <span><%= job.updated_at.strftime("%Y-%m-%d") %></span>
         </td>
     </tr>
     <% end %>

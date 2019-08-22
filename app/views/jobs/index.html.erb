@@ -11,7 +11,7 @@
             <td>薪资情况</td>
             <td>工作地点</td>
             <td>最后更新</td>
-            <td>发布者</td>
+            <!-- <td>发布者</td> -->
             <td>管理选项</td>
         </tr>
     </thead>
@@ -35,11 +35,11 @@
                 <%= job.location %>
             </td>
             <td>
-               <%= job.updated_at %>
+               <%= job.updated_at.strftime("%Y-%m-%d") %>
              </td>
-             <td>
+             <!-- <td>
                <%= job.user.email %>
-             </td>
+             </td> -->
              <td>
             <% if current_user && current_user == job.user %>
                   <%= link_to("编辑", edit_job_path(job), :class => "btn btn-xs btn-info") %>
