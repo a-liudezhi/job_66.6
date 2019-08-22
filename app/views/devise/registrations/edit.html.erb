@@ -8,13 +8,13 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-    <%= f.input :name, :label => "个性签名" %>
-    <%= f.input :password, :label => "新密码", placeholder: '请输入6-16位新密码', required: true, input_html: { maxlength: 16 } %>
+    <%= f.input :name, :label => "个性签名", placeholder: '请输入个性签名', required: true %>
+    <%= f.input :password, :label => "新密码(如不改密码，这两项不用填写)", placeholder: '请输入6-16位新密码', required: true, input_html: { maxlength: 16 } %>
     <%= f.input :password_confirmation, :label => false, placeholder: '确认新密码', error: '请输入相同的新密码', required: true, input_html: { maxlength: 16 } %>
     <%= f.input :current_password, :label => "当前(旧)密码", placeholder: '请输入6-16位旧密码', error: '请输入6-16位旧密码', required: true, input_html: { maxlength: 16 } %>
     </div>
   <div class="form-actions">
-    <%= f.submit "提交更改", disable_with: "Submit...", class: "btn btn-xs btn-info" %>
+    <%= f.submit "提交更改", disable_with: "提交中...", class: "btn btn-xs btn-info" %>
   </div>
 <% end %>
 <br>

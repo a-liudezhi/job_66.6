@@ -6,16 +6,33 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-if User.find_by(email: "think72013@aliyun.com" "a.liudezhi@gmail.com").nil?
-  User.create(email: "think72013@aliyun.com", password: "12345678", password_confirmation: "12345678", is_admin: false)
-  User.create(email: "a.liudezhi@gmail.com", password: "12345678", password_confirmation: "12345678", is_admin: true)
-  puts "User 已经建立好了,帐号: think72013@aliyun.com , 密码: 12345678
-  Admin 已经建立好了,帐号: a.liudezhi@gmail.com , 密码: 12345678"
+if User.find_by(email: "a.liudezhi@gmail.com").nil?
+a = User.new
+a.email = "a.liudezhi@gmail.com"           # 可以改成自己的 email
+a.password = "12345678"                # 最少要六码
+a.password_confirmation = "12345678"   # 最少要六码
+a.is_admin = true
+a.save
+puts "Admin 已经建立好了，帐号为#{a.email}, 密码为#{a.password}"
 else
-  puts "User/Admin 已经建立过了，脚本跳过该步骤。"
+puts "Admin 已经建立过了，帐号: a.liudezhi@gmail.com , 密码: 12345678 , 脚本跳过该步骤。"
 end
 
-# Initialize Job
+if User.find_by(email: "think72013@aliyun.com").nil?
+u = User.new
+u.email = "think72013@aliyun.com"           # 可以改成自己的 email
+u.password = "12345678"                # 最少要六码
+u.password_confirmation = "12345678"   # 最少要六码
+u.is_admin = false
+u.save
+puts "User 已经建立好了，帐号为#{u.email}, 密码为#{u.password}"
+else
+puts "User 已经建立过了，帐号: think72013@aliyun.com , 密码: 12345678 , 脚本跳过该步骤。"
+end
+
+# #无法执行 rake db:seed 来创建job ,可能是因为数据库作了job与user的关联，要记录是谁创建job
+
+# #Initialize Job
 
 # create_job = for i in 1..10 do
 #   Job.create!([title: "Job no.#{i}", description: "这是用seeds文件建立的第 #{i} 个公开的工作", wage_upper_bound: rand(50..99)*100, wage_lower_bound: rand(10..49)*100, is_hidden: "false"])
@@ -27,7 +44,7 @@ end
 # puts "10 Public jobs created."
 # puts "10 Hidden jobs created."
 
-Job.create(title: "设计师",
+Job.create(title: "设计师",  # job.create!   如果可以，有 ! 号才能创建
   brand: "欧派",
   description: "1、要懂圆方软件、CAD,有相关橱柜衣柜或家具设计经验优先；
   2、设计专业毕业，拥有很强的设计概念；

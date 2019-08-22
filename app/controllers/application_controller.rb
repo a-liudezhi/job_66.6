@@ -17,19 +17,19 @@ def set_locale  #設定多國語系
 
    protected
 
-   before_action :configure_permitted_parameters, if: :devise_controller?
-   before_action :configure_permitted, if: :devise_controller?
+ before_action :configure_permitted_parameters, if: :devise_controller?
+ before_action :configure_permitted, if: :devise_controller?
 
-   def configure_permitted_parameters
-       devise_parameter_sanitizer.permit(:sign_up) do |u|
-       u.permit(:name, :email, :password, :password_confirmation)
-     end
-    end
+ def configure_permitted_parameters
+     devise_parameter_sanitizer.permit(:sign_up) do |u|   # 注册
+     u.permit(:name, :email, :is_admin, :password, :password_confirmation)
+   end
+  end
 
-    def configure_permitted
-     devise_parameter_sanitizer.permit(:account_update) do |u|
+ def configure_permitted
+     devise_parameter_sanitizer.permit(:account_update) do |u|   # 修改帐户资料
      u.permit(:name, :email, :password, :password_confirmation, :current_password)
    end
  end
- 
+
 end
