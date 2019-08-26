@@ -12,12 +12,19 @@
 //
 //= require jquery
 //= require rails-ujs
+//= require bootstrap-sprockets
 //= require activestorage
 //= require turbolinks
-//= require bootstrap/alert
-//= require bootstrap/dropdown
 //= require bootstrap/modal
 //= require_tree .
+
+// responsive embed videos 响应式嵌入视频
+$(document).ready(function() {
+    $('iframe[src*="youtube.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
+    $('iframe[src*="youtube.com"]').addClass('embed-responsive-item');
+    $('iframe[src*="vimeo.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
+    $('iframe[src*="vimeo.com"]').addClass('embed-responsive-item');
+});
 
 // 设定首页滚动按钮的触发行为
 

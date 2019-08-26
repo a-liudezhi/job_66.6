@@ -1,7 +1,41 @@
-<div class="col-md-12">
-  <div class="row box">
-    <div class="box-inner col-md-6 col-md-offset-3">
-      <h1 class="title">18K Offer</h1>
+<!-- <div class="col-md-12"> -->
+   <div class="home-video-hero video-overlay">
+     <div class="video-frame">
+      <video autoplay loop muted playsinline id="myVideo" style="z-index:-1" width="100%" webkit-playsinline="true"
+       controls="controls" poster=""
+       src="https://cdn1.evernote.com/evernote.com/video/homepage/homepage-hero-video@2x.mp4"
+      type="video/mp4">
+    </video>
+
+  <div class="content-container col-sm-4 col-xs-12">
+    <div class="content">
+        <h1 class="">轻松找到全栈好工作</h1>
+        <div class="line"></div>
+        <br>
+     <p class="slogan">工作无处不在。在这里，帮你连接整个职缺市场
+        <br>
+          放心学习，轻松找Rails全栈工作
+        <br>
+          凭借自己的努力和天份也会变 Winner
+        </p>
+
+        <p class="text-center">
+          <%= link_to jobs_path, class: "btn btn-danger btn-lg btn-round btn-raised " do %>
+          <%= fa_icon("play", text: "开始") %>
+          <% end %>
+        </p>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- <div class="box-inner col-md-6 col-md-offset-3 content content-container">
+    <h1 class="title">18K Offer</h1>
       <p class="slogan">18K Offer 是一个提供18K薪水工作机会的求职网站。
         <br>
         我们希望借由这个网站，能让大家找到且应征上高薪且优质的工作。
@@ -14,16 +48,17 @@
         <% end %>
       </p>
     </div>
+
   </div>
-</div>
+</div> -->
+
 
 <div class="content-section-a">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 col-sm-6">
-        <hr class="section-heading-spacer">
-        <div class="clearfix"></div>
-        <h2 class="section-heading">只要你勇敢说出再见</h2>
+        <div class="line-a"></div>
+        <div class="section-title">只要你勇敢说出再见</div>
         <p class="lead">生活一定会赐予你一个新的开始</p>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
@@ -37,9 +72,8 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-        <hr class="section-heading-spacer">
-        <div class="clearfix"></div>
-        <h2 class="section-heading">当前后左右都没有路时</h2>
+        <div class="line-a"></div>
+        <p class="section-title">当前后左右都没有路时</p>
         <p class="lead">命运一定是鼓励你向上飞了 <a target="_blank" href="https://a-liudezhi.github.io/">DZ 的 Blog</a>! 啦啦啦啦啦啦啦</p>
       </div>
       <div class="col-lg-5 col-sm-pull-6  col-sm-6">
@@ -52,13 +86,16 @@
 <div class="content-section-a">
   <div class="container">
     <div class="row">
-      <div class="col-lg-5 col-sm-6">
-        <hr class="section-heading-spacer">
-        <div class="clearfix"></div>
-        <h2 class="section-heading">放弃很容易<br>但.坚持一定很酷</h2>
-        <p class="lead">生命不息 奋斗不止<br><a target="_blank" href="https://forum.qzy.camp/">论坛资源</a></p>
+      <div class="col-lg-5  col-sm-6">
+        <div class="line-a"></div>
+        <p class="section-title">放弃很容易</p>
+        <p class="lead">
+          但.坚持一定很酷
+          <br>
+          生命不息,奋斗不止
+          <a target="_blank" href="https://forum.qzy.camp/">论坛资源</a></p>
       </div>
-      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+      <div class="col-lg-5  col-lg-offset-2 col-sm-6">
         <%= image_tag 'http://img.1ppt.com/uploads/allimg/1304/1-130424134245X5.jpg', class: 'img-responsive' %>
       </div>
     </div>

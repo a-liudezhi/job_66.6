@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>真·24K Offer</title>
-        <%= csrf_meta_tags %>
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-        <%= render_page_title_tag %>
-        <%= render_page_description_meta_tag %>
-        <%= render_page_keywords_meta_tag %>
-    </head>
-    <body>
-       <div class="container-fluid">
-         <div class="row">
-              <%= render "common/navbar" %>
-              <%= render "common/flashes" %>
-            <%= yield %>
-          </div>
-        </div>
-       <%= render "common/footer" %>
-    </body>
+  <head>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://api.map.baidu.com/api?v=2.0&ak=fitXUIqC5oHoWvnUhd4PwtHlbMb22AvH&s=1" type="text/javascript"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="/images/logo.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <div class="container-fluid body-content">
+      <div class="content-inside">
+        <div class="row navbar-row">
+          <%= render "common/navbar" %>
+          <%= render "common/flashes" %>
+         </div>
+        <%= yield %>
+      </div>
+    </div>
+    <%= render "common/footer" %>
+  </body>
 </html>

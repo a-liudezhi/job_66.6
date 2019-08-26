@@ -5,11 +5,13 @@
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <body>
-        <div class="container-fluid">
-          <div class="row">
+  <body>
+    <div class="container-fluid body-content">
+      <div class="container-fluid">
+        <div class="row navbar-row">
             <%= render "common/admin_navbar" %>
-            <%= render "common/flashes" %>
+              <%= render "common/flashes" %>
+               </div>
               <%= yield %>
             </div>
           </div>

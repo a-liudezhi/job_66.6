@@ -46,6 +46,11 @@ gem 'ransack' # 搜索
 gem 'seo_helper' # 网站搜索引擎优化
 gem 'rails-i18n' # 多语言版本
 gem 'seed-fu', '~> 2.3'
+gem 'figaro'
+gem "fog-aws"
+gem 'rqrcode'
+gem 'mini_magick'
+gem 'paperclip', '~> 4.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

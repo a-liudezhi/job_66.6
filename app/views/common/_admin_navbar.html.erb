@@ -3,19 +3,21 @@
    <nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-     <div class="navbar-header">
+    <div class="navbar-header ">
+          <!--=== Logo ===-->
+        <a class="navbar-brand" href="/"><img src='<%= image_url 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFEw6im_kFh0P8p_e_g6aLRKKxFW5hYvQ_bu084Mj0kTxxvFpf' %>'> 聘畅网 </a>
+        <% root_path %>
+
         <!--=== 右侧下拉选单（移动端） ===-->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-4" aria-expanded="false">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </button>
-          <!--=== Logo ===-->
-          <a class="navbar-brand" href="/"><img src='<%= image_url 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFEw6im_kFh0P8p_e_g6aLRKKxFW5hYvQ_bu084Mj0kTxxvFpf' %>'>聘畅网</a>
         </div>
           <!--=== 网站连结 ===-->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="collapse navbar-collapse" id="navigation-example">
             <ul class="nav navbar-nav">
               <li><%= link_to('管理后台', admin_jobs_path) %></li>
               <li><%= link_to('回到前台', jobs_path) %></li>

@@ -1,3 +1,169 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.line {
+  display: block;
+  position: relative;
+  top: 10px;
+  width: 80%;
+  height: 3px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 auto;
+}
+// .line:hover {
+//   background-color: #4FC3F7;//鼠标放置在btn上的背景颜色
+//   border-color: #4FC3F7;//鼠标放置在btn上的边框颜色
+// }
+
+.line-a {
+  display: block;
+  position: relative;
+  top: 10px;
+  width: 80%;
+  height: 3px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 auto;
+  background-color: #4FC3F7;//背景颜色
+  border-color: #4FC3F7;//边框颜色
+}
+.line-a:hover {
+  background-color: #4FC3F7;//鼠标放置在btn上的背景颜色
+  border-color: #4FC3F7;//鼠标放置在btn上的边框颜色
+}
+
+// 以下是视频
+
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.home-video-hero {
+  position: relative;
+  margin: 0 -15px 0 -15px;
+  bottom: -5px;
+}
+.home-video-hero .video-frame {
+  position: relative;
+}
+.home-video-hero .video-frame video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-size: cover;
+    position: relative;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    min-height: auto;
+    z-index: -10;
+    background-size: cover;
+}
+video {
+
+}
+.home-video-hero .video-overlay {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    // background: rgba(0,0,0,0.3);
+    z-index: 2;
+}
+.home-video-hero .content-container {
+    width: 670px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(+50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+.home-video-hero h1 {
+    font-size: 38px;
+    font-size:4rem;
+    line-height: 48px;
+    line-height: 3rem;
+    text-align: center;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 10px;
+}
+
+//---视频中广告口号---
+.home-video-hero .slogan {
+    font-family: "webfont",Helvetica,Arial,sans-serif;
+    line-height: 50px; // 文字行间距离
+    text-align: center;
+    margin-top: 10px;  // 广告口号与标题横线距离
+    margin-bottom: 70px; // 按钮顶上与广告口号距离
+    font-size: 25px;
+    top: 12px;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.home-video-hero p {
+    font-family: "Gotham_SSm_4r",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-size: 1.5rem;
+    line-height: 1.125rem;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.content a:hover {
+  background-color: #E65100;
+}
+.content a {
+  // font-size: 1.7rem;
+  // font-size: 1.1rem;
+  font-size: 1.8rem;
+
+}
+
+//===底部图片设定===
+ //---------Content---------
+
+//---模式 a ---
+ .content-section-a {
+     padding: 50px 0;
+     background-color: #f8f8f8; //背影色
+}
+
+//---模式 b ---
+ .content-section-b {
+     padding: 50px 0;
+     border-top: 1px solid #e7e7e7;
+     border-bottom: 1px solid #e7e7e7;
+ }
+
+ //---标题设定---
+
+ .section-title {
+   padding-bottom: 10px; // 填充底
+   text-align: center;
+   margin-top: 30px;  // 广告内容与横线距离
+   font-size: 25px;
+   color: #222;
+ }
+//---内容---
+ .lead {
+     padding-bottom: 70px; // 填充底
+     font-size: 20px;
+     font-weight: 400px;
+     color: #222;
+     margin-bottom: 35px;// 与底下距离
+     line-height: 50px;
+     text-align: center;
+     margin-top: 20px;// 与标题距离
+     font-family: "webfont",Helvetica,Arial,sans-serif;
+     top: 12px;
+    -webkit-font-smoothing: antialiased;
+ }

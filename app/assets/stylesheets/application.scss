@@ -16,6 +16,8 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+ @import "welcome";
+ @import "resumes";
 
 // // 移動 flash 提示訊息的位置
 //  .customed-flash {
@@ -53,7 +55,7 @@
    }
 
    .goTop:hover {
-     background-color: #f0f0f0;
+     background-color: #E65100;
 
      span{
        color: #eb5424;
@@ -111,8 +113,8 @@
          width: 100%;
        }
        .button:hover{
-           background-color: #4A99B5;
-           border-color: #4A99B5;
+           background-color: #E65100;
+           border-color: #E65100;
            color: #fff;
        }
      }
@@ -183,37 +185,39 @@
        height: 32px; //定制图片高度
    }
 
-//=== welcome 大图内容规格设定===
- //---------Box---------
-//---整个图片---
- .box {
-     background-image: url("http://img02file.tooopen.com/images/20160408/tooopen_sy_158723161481.jpg");
-     background-repeat: no-repeat; //背景是否重复
-     background-size: cover; //这段代码主要实现了图片不会被拉伸变形的效果
-     margin-bottom: 50px; //和底下距离
-     }
-
-//---阴影部分---
-     .box-inner {
-         background-color: rgba(250, 250, 250, 0.39); //背景颜色含透明度
-         padding-bottom: 5px;
-         margin-top: 150px; //和图片顶部距离
-         margin-bottom: 150px; //和图片底下距离
-     }
-
-     .title {
-         text-align: center; //文字居中
-         margin-bottom: 80px;
-     }
+// //=== welcome 大图内容规格设定===
+//  //---------Box---------
+// //---整个图片---
+//  .box {
+//    // background-image: url("https://cdn1.evernote.com/evernote.com/video/homepage/homepage-hero-video@2x.mp4"
+//    // type="video/mp4")
+//      // background-image: url("http://img02file.tooopen.com/images/20160408/tooopen_sy_158723161481.jpg");
+//      // background-repeat: no-repeat; //背景是否重复
+//      // background-size: cover; //这段代码主要实现了图片不会被拉伸变形的效果
+//      // margin-bottom: 50px; //和底下距离
+//      }
+//
+// //---阴影部分---
+//      .box-inner {
+//          background-color: rgba(250, 250, 250, 0.39); //背景颜色含透明度
+//          padding-bottom: 5px;
+//          margin-top: 150px; //和图片顶部距离
+//          margin-bottom: 150px; //和图片底下距离
+//      }
+//
+     // .title {
+     //     text-align: center; //文字居中
+     //     margin-bottom: 80px;
+     // }
 //---广告口号---
-     .slogan {
-         color: #222;
-         margin-top: 10px;
-         margin-bottom: 50px;
-         text-align: center;
-         font-size: 25px;
-         top: 12px;
-     }
+     // .slogan {
+     //     color: #222;
+     //     margin-top: 10px;
+     //     margin-bottom: 50px;
+     //     text-align: center;
+     //     font-size: 25px;
+     //     top: 12px;
+     // }
 
 //---首页大图按钮---
 
@@ -237,40 +241,41 @@
  }
 
 
-//===底部图片设定===
- //---------Content---------
-
-//---模式 a ---
- .content-section-a {
-     padding: 50px 0;
-     background-color: #f8f8f8; //背影色
-}
-
-//---模式 b ---
- .content-section-b {
-     padding: 50px 0;
-     border-top: 1px solid #e7e7e7;
-     border-bottom: 1px solid #e7e7e7;
- }
-
- //---标题设定---
- .section-heading-spacer {
-     float: left;
-     width: 200px;
-     border-top: 3px solid #e7e7e7;
- }
-//---标题下边距离---
- .section-heading {
-     margin-bottom: 30px;
- }
-//---内容---
- .lead {
-     font-size: 18px; //字体大小
-     font-weight: 400;
-     color: #222;  //字体颜色
-     margin-bottom: 60px;
-     text-align: center;
- }
+// //===底部图片设定===
+//  //---------Content---------
+//
+// //---模式 a ---
+//  .content-section-a {
+//      padding: 50px 0;
+//      background-color: #f8f8f8; //背影色
+// }
+//
+// //---模式 b ---
+//  .content-section-b {
+//      padding: 50px 0;
+//      border-top: 1px solid #e7e7e7;
+//      border-bottom: 1px solid #e7e7e7;
+//  }
+//
+//  //---标题设定---
+//
+//   .section-heading {
+//       margin-bottom: 30px; //---标题上边距离---
+//   }
+//  .section-heading-spacer {
+//      float: left;
+//      width: 200px;
+//      border-top: 3px solid #e7e7e7;
+//  }
+//
+// //---内容---
+//  .lead {
+//      font-size: 18px; //字体大小
+//      font-weight: 400;
+//      color: #222;  //字体颜色
+//      margin-bottom: 60px;
+//      text-align: center;
+//  }
 
 
  //---------Footer---------
