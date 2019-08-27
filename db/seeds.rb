@@ -44,7 +44,7 @@ end
 # puts "10 Public jobs created."
 # puts "10 Hidden jobs created."
 
-Job.create(title: "设计师",  # job.create!   如果可以，有 ! 号才能创建
+Job.create!(title: "设计师",  # job.create!   如果可以，有 ! 号才能创建
   brand: "欧派",
   description: "1、要懂圆方软件、CAD,有相关橱柜衣柜或家具设计经验优先；
   2、设计专业毕业，拥有很强的设计概念；

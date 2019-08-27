@@ -1,7 +1,4 @@
-<!-- <div class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation"> <!--滚动导航--> -->
-  <div class="col-md-12">
    <nav class="navbar navbar-default navbar-static-top">
-    <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header ">
           <!--=== Logo ===-->
@@ -9,7 +6,7 @@
         <% root_path %>
 
         <!--=== 右侧下拉选单（移动端） ===-->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".mynavigation">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -17,7 +14,7 @@
           </button>
         </div>
           <!--=== 网站连结 ===-->
-          <div class="collapse navbar-collapse" id="navigation-example">
+          <div class="collapse navbar-collapse mynavigation">
             <ul class="nav navbar-nav">
               <li><%= link_to('管理后台', admin_jobs_path) %></li>
               <li><%= link_to('回到前台', jobs_path) %></li>
@@ -41,6 +38,7 @@
                       <li> <%= link_to("后台管理", admin_jobs_path, class: "btn btn-md btn-default") %> </li>
                     <% end %>
                      <li> <%= link_to("修改密码", edit_user_registration_path, class: "btn btn-md btn-default") %> </li>
+                     <li class="divider"></li>
                      <li> <%= link_to("退出", destroy_user_session_path, method: :delete, class: "btn btn-md btn-default") %> </li>
                   </ul>
                 </li>
@@ -57,12 +55,7 @@
                 </button>
               </div>
             </div>
-            <% end %>
-          </div>
+          <% end %>
         </div>
-      <!-- /.navbar-collapse -->
-     </div>
-    <!-- /.container-fluid -->
+      </div>
    </nav>
- </div>
-<!-- </div> -->

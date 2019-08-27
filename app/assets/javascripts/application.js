@@ -29,7 +29,7 @@ $(document).ready(function() {
 // 设定首页滚动按钮的触发行为
 
 $(window).scroll(function () {  // 指的是当屏幕滚动时，所触发的功能
-  if ($(this).scrollTop() > 200) { // 指的是当屏幕滚动到2500px的高度时，所触发的行为（因为我只设定在首页触发按钮，并且希望使用者将内容看完时才触发行为，所以数值较大）
+  if ($(this).scrollTop() > 600) { // 指的是当屏幕滚动到2500px的高度时，所触发的行为（因为我只设定在首页触发按钮，并且希望使用者将内容看完时才触发行为，所以数值较大）
     $(".goTop").fadeIn(100); // 指的是按钮淡入显示的时间，100为0.1秒
   } else {
     $(".goTop").fadeOut(200); // 指的是按钮淡出显示的时间，200为0.2秒
@@ -45,7 +45,7 @@ $(window).scroll(function () {  // 指的是当屏幕滚动时，所触发的功
 
 // 设定navbar的滚动触发行为
 $(window).scroll(function () {  // 指的是当屏幕滚动时，所触发的功能
-    if ($(this).scrollTop() > 125) {  //指的是当屏幕滚动到125px的高度时，所触发的行为
+    if ($(this).scrollTop() > 650) {  //指的是当屏幕滚动到125px的高度时，所触发的行为
         $('#navbar').addClass('show_bgcolor') //指的是抓取ID为navbar的物件，并加入名为show_bgcolor的CSS属性（也就是Part1为什么要在HTML里面设定ID的原因，这样Javascript才能抓取到对应的物件）
     } else {
         $('#navbar').removeClass('show_bgcolor')

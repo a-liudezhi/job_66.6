@@ -33,6 +33,40 @@
  }
 // navbar动态效果 end--
 
+.btn-a {
+    background-color: #4FC3F7;//背景颜色
+    border-color: #4FC3F7;//边框颜色
+    color: #fff;
+    // font-size: 20px;
+    // font-weight: 400px;
+    // margin-bottom: 10px;// 与底下距离
+    // line-height: 50px; // 行距
+    // text-align: center;
+    // letter-spacing: 5px;//调整文字间距
+    // margin-top: 20px;// 与标题距离
+    // padding: 0px 10px;//通过填充来决定btn的大小
+    // font-size: 20px;//btn文字大小
+    border-radius: 5px;//btn圆角
+    // width: 110px;//这里用指定宽度把btn拉得更长
+    // margin-bottom:60px; //与阴影底部距离
+    // text-padding: 0 0 20 0px; //上下10px，左右30px
+    // line-height: 30px; //文字行高
+    margin-left: 10px; //按钮间距
+    // margin: 10px; //按钮间距
+
+}
+
+.btn-a:hover {
+    background-color: #E65100;//鼠标放置在btn上的背景颜色
+    border-color: #E65100;//鼠标放置在btn上的边框颜色
+    color: #fff;
+
+}
+
+.navbar-right {
+  margin-right: 20px; //右边距
+}
+
 // 设定首页滚动按钮属性
 
  .goTop {
@@ -41,12 +75,12 @@
      top: 80%;
      right: 35px;
      position: fixed;
-     background-color: #fff;
+     background-color: #fff;  // 背景
      border-radius: 5px;
-     box-shadow: 1px 1px 3px #666;
+     box-shadow: 1px 1px 5px #666; //阴影
 
      span {
-       color: #000;
+       color: #4FC3F7;  // 箭头色彩
        font-size: 20px;
              position: absolute;
        top: 7px;
@@ -55,10 +89,10 @@
    }
 
    .goTop:hover {
-     background-color: #E65100;
+     background-color: #45B83D;
 
      span{
-       color: #eb5424;
+       color: #fff;  // 鼠标悬浮时箭头色彩
      }
    }
    // 设定首页滚动按钮属性 end--
@@ -139,6 +173,15 @@
     }
  }
 
+ .navbar-brand > img {    // logo 图片
+       display: inline-block; //图片和链接文字显示在同一行
+       margin-right: 10px; //图片和链接文字拉开一点距离
+       margin-left: -11px; //图片与左边距
+       margin-top: -3px;
+       width: 32px; //定制图片宽度
+       height: 32px; //定制图片高度
+   }
+
 //--- Logo 字体颜色和对齐样式---
 .navbar-default .navbar-brand {
      color: #4FC3F7; //字体颜色
@@ -176,14 +219,6 @@
      background-color: transparent; //鼠标点击登陆后的用户背景色彩
      color: #E65100; //鼠标点击登陆后的用户字体色彩
  }
-
- .navbar-brand > img {
-       display: inline-block; //图片和链接文字显示在同一行
-       margin-right: 10px; //图片和链接文字拉开一点距离
-       margin-top: -3px;
-       width: 32px; //定制图片宽度
-       height: 32px; //定制图片高度
-   }
 
 // //=== welcome 大图内容规格设定===
 //  //---------Box---------
