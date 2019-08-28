@@ -51,7 +51,7 @@
     // margin-bottom:60px; //与阴影底部距离
     // text-padding: 0 0 20 0px; //上下10px，左右30px
     // line-height: 30px; //文字行高
-    margin-left: 10px; //按钮间距
+    margin-left: 15px; //按钮间距
     // margin: 10px; //按钮间距
 
 }
@@ -82,7 +82,7 @@
      span {
        color: #4FC3F7;  // 箭头色彩
        font-size: 20px;
-             position: absolute;
+       position: absolute;
        top: 7px;
        left: 8px;
      }
@@ -90,7 +90,6 @@
 
    .goTop:hover {
      background-color: #45B83D;
-
      span{
        color: #fff;  // 鼠标悬浮时箭头色彩
      }
@@ -182,7 +181,7 @@
        height: 32px; //定制图片高度
    }
 
-//--- Logo 字体颜色和对齐样式---
+//--- 导航 字体颜色和对齐样式---
 .navbar-default .navbar-brand {
      color: #4FC3F7; //字体颜色
      padding: 10px 30px; //上下10px，左右30px
